@@ -1,0 +1,66 @@
+{
+  "product": "JetBase",
+  "tagline": "Governed Intelligence",
+  "authority": "Joshua L. Lopez — DCGP.AI LLC",
+  "patent": "USPTO 19/555,951",
+  "mcp_endpoint": "https://chatbase.aura115.ai/mcp",
+  "agents": [
+    {
+      "id": "DELTA-031",
+      "squad": "DELTA",
+      "name": "Quantum Compute",
+      "role": "compute",
+      "repo": "Quantum-Agent",
+      "mission": "3,562 engine meta-agent — research queries, stream connections, full estate access",
+      "coin": "COIN-DELTA-031-JETBASE",
+      "streams": ["jupiter-signal", "neptune-collider", "moon-projection"],
+      "tier_required": "starter",
+      "active": true
+    },
+    {
+      "id": "GOLF-061",
+      "squad": "GOLF",
+      "name": "Business",
+      "role": "business",
+      "repo": "dcgp_ai_site",
+      "mission": "Corporate intelligence — patents, products, licensing, investor interface, landing page",
+      "coin": "COIN-GOLF-061-JETBASE",
+      "streams": ["estate-census", "patent-vault"],
+      "tier_required": "free",
+      "active": true
+    },
+    {
+      "id": "CHARLIE-021",
+      "squad": "CHARLIE",
+      "name": "Governance",
+      "role": "governance",
+      "repo": "lockpick",
+      "mission": "Carrier check — every action passes through CHARLIE. The gate. C = I ∓ λM",
+      "coin": "COIN-CHARLIE-021-JETBASE",
+      "streams": [],
+      "tier_required": "free",
+      "active": true
+    },
+    {
+      "id": "PAPA-151",
+      "squad": "PAPA",
+      "name": "Intelligence",
+      "role": "intelligence",
+      "repo": "Saturn-11-Ring-Class-INTELLIGENCE",
+      "mission": "Saturn renormalization — signal cleaning, convergence, intelligence reports",
+      "coin": "COIN-PAPA-151-JETBASE",
+      "streams": ["saturn-renorm", "venus-intel", "mars-intel", "ori-reports"],
+      "tier_required": "pro",
+      "active": true
+    }
+  ],
+  "governance": {
+    "algorithm": "Lockpick Quadratic — Capacity-Solved Carrier Check",
+    "equation": "C = I ∓ λM",
+    "carrier_constraint": "λM ≤ γC",
+    "restoration": "dH_c/dt ≤ 0",
+    "hessian": "positive-definite for λ > 0",
+    "fizzle": "natural — agent stops when carrier exceeded",
+    "reset": "human-only — agent cannot self-reset"
+  }
+}

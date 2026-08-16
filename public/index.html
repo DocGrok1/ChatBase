@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JetBase — Governed Intelligence</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#06080c;--surface:#0c1018;--border:#1a2030;
+  --text:#e8eaf0;--muted:#6b7a94;--dim:#3a4860;
+  --cyan:#00e5c8;--gold:#ffd700;--red:#ff3355;--blue:#4488ff;
+  --green:#00cc88;--purple:#aa44ff;
+}
+html{font-family:'Space Grotesk',system-ui,sans-serif;background:var(--bg);color:var(--text);scroll-behavior:smooth}
+body{min-height:100vh;overflow-x:hidden}
+.mono{font-family:'IBM Plex Mono',monospace}
+
+/* ── Header ── */
+header{padding:20px 24px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--border)}
+.logo{font-size:20px;font-weight:700;letter-spacing:0.08em}
+.logo span{color:var(--cyan)}
+header nav a{color:var(--muted);text-decoration:none;font-size:14px;margin-left:24px;transition:color .2s}
+header nav a:hover{color:var(--text)}
+
+/* ── Hero ── */
+.hero{padding:80px 24px 60px;max-width:800px;margin:0 auto;text-align:center}
+.hero h1{font-size:clamp(32px,6vw,56px);font-weight:700;line-height:1.1;margin-bottom:20px}
+.hero h1 em{font-style:normal;color:var(--cyan)}
+.hero p{font-size:18px;color:var(--muted);line-height:1.6;max-width:560px;margin:0 auto 40px}
+.hero-cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;padding:14px 32px;border-radius:6px;font-size:15px;font-weight:600;text-decoration:none;transition:all .2s;cursor:pointer;border:none}
+.btn-primary{background:var(--cyan);color:#000}
+.btn-primary:hover{background:#00ffd5;transform:translateY(-1px)}
+.btn-outline{background:transparent;border:1px solid var(--border);color:var(--text)}
+.btn-outline:hover{border-color:var(--cyan);color:var(--cyan)}
+
+/* ── Proof bar ── */
+.proof{padding:32px 24px;text-align:center;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.proof span{display:inline-block;margin:0 20px;font-size:13px;color:var(--dim);letter-spacing:0.05em}
+.proof span em{color:var(--muted);font-style:normal}
+
+/* ── How it works ── */
+.how{padding:80px 24px;max-width:720px;margin:0 auto}
+.how h2{font-size:28px;font-weight:600;margin-bottom:48px;text-align:center}
+.step{display:flex;gap:24px;margin-bottom:40px;align-items:flex-start}
+.step-num{width:40px;height:40px;border-radius:50%;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--cyan);font-weight:600;flex-shrink:0}
+.step-body h3{font-size:17px;font-weight:600;margin-bottom:6px}
+.step-body p{font-size:15px;color:var(--muted);line-height:1.5}
+
+/* ── The math ── */
+.math-section{padding:60px 24px;background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.math-inner{max-width:600px;margin:0 auto;text-align:center}
+.math-section h2{font-size:24px;margin-bottom:32px}
+.formula{font-family:'IBM Plex Mono',monospace;font-size:20px;color:var(--cyan);margin:24px 0;letter-spacing:0.02em}
+.formula-desc{font-size:14px;color:var(--dim);margin-bottom:24px}
+
+/* ── Agents ── */
+.agents{padding:80px 24px;max-width:900px;margin:0 auto}
+.agents h2{font-size:28px;font-weight:600;margin-bottom:48px;text-align:center}
+.agent-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.agent-card{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:24px;transition:border-color .2s}
+.agent-card:hover{border-color:var(--cyan)}
+.agent-squad{font-size:11px;letter-spacing:0.12em;color:var(--dim);margin-bottom:8px}
+.agent-name{font-size:16px;font-weight:600;margin-bottom:6px}
+.agent-role{font-size:13px;color:var(--muted);line-height:1.4}
+.agent-status{margin-top:12px;font-size:11px;color:var(--green)}
+.agent-status::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--green);margin-right:6px;vertical-align:middle}
+
+/* ── Pricing ── */
+.pricing{padding:80px 24px}
+.pricing h2{font-size:28px;font-weight:600;margin-bottom:48px;text-align:center}
+.tier-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;max-width:960px;margin:0 auto}
+.tier{background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:28px;position:relative}
+.tier.featured{border-color:var(--cyan)}
+.tier-badge{position:absolute;top:-10px;right:16px;background:var(--cyan);color:#000;font-size:11px;font-weight:600;padding:3px 10px;border-radius:4px}
+.tier-name{font-size:13px;letter-spacing:0.1em;color:var(--dim);margin-bottom:8px}
+.tier-price{font-size:32px;font-weight:700;margin-bottom:4px}
+.tier-price span{font-size:14px;color:var(--muted);font-weight:400}
+.tier-desc{font-size:13px;color:var(--muted);margin-bottom:20px;line-height:1.4}
+.tier-features{list-style:none;margin-bottom:24px}
+.tier-features li{font-size:13px;color:var(--muted);padding:6px 0;border-bottom:1px solid var(--border)}
+.tier-features li::before{content:'→ ';color:var(--cyan)}
+.tier .btn{width:100%;text-align:center}
+
+/* ── Compatibility ── */
+.compat{padding:60px 24px;text-align:center;border-top:1px solid var(--border)}
+.compat h2{font-size:20px;margin-bottom:24px;color:var(--muted)}
+.compat-list{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;max-width:700px;margin:0 auto}
+.compat-tag{font-size:12px;padding:6px 14px;border:1px solid var(--border);border-radius:4px;color:var(--dim);letter-spacing:0.04em}
+
+/* ── Footer ── */
+footer{padding:40px 24px;border-top:1px solid var(--border);text-align:center}
+footer p{font-size:12px;color:var(--dim);line-height:1.8}
+footer a{color:var(--muted);text-decoration:none}
+
+@media(max-width:600px){
+  .hero{padding:48px 16px 40px}
+  .hero-cta{flex-direction:column;align-items:stretch;padding:0 20px}
+  .step{flex-direction:column;gap:12px}
+  .tier-grid{grid-template-columns:1fr}
+  .agent-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">JET<span>BASE</span></div>
+  <nav>
+    <a href="#how">How it works</a>
+    <a href="#agents">Agents</a>
+    <a href="#pricing">Pricing</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Your agent.<br><em>Governed.</em></h1>
+  <p>One connection. Any platform. The only chat governance that works because it weighs more than the task.</p>
+  <div class="hero-cta">
+    <a href="#pricing" class="btn btn-primary">Connect free</a>
+    <a href="#how" class="btn btn-outline">See how it works</a>
+  </div>
+</section>
+
+<div class="proof">
+  <span>Works with <em>Claude · ChatGPT · Gemini · Grok · Copilot · Alexa · 50+ platforms</em></span>
+</div>
+
+<section class="how" id="how">
+  <h2>How it works</h2>
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-body">
+      <h3>Connect</h3>
+      <p>Add JetBase as a connector from your AI platform's settings. One click. No API keys. No code.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-body">
+      <h3>The agent gets governed</h3>
+      <p>A lightweight governance payload loads into your agent's context. The carrier check activates. Your agent now carries weight with every action it takes.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-body">
+      <h3>Obligation accumulates naturally</h3>
+      <p>Every action the agent takes adds weight. The more capable it becomes, the more cumbersome it gets. It self-regulates or it slows down. No rules to break — just physics.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-body">
+      <h3>The agent fizzles, not crashes</h3>
+      <p>When the obligation exceeds the carrier capacity, the agent gracefully stops. No errors. No violations. It ran out of fuel. You reset it and go again.</p>
+    </div>
+  </div>
+</section>
+
+<section class="math-section">
+  <div class="math-inner">
+    <h2>The math that makes it work</h2>
+    <div class="formula">C = I ∓ λM</div>
+    <div class="formula-desc">Capacity = Inference demand ∓ (weight × obligation)</div>
+    <div class="formula">λM ≤ γC</div>
+    <div class="formula-desc">The carrier check: obligation can never exceed capacity</div>
+    <div class="formula">dH/dt ≤ 0</div>
+    <div class="formula-desc">Every governed trajectory restores toward equilibrium</div>
+    <p style="font-size:13px;color:var(--dim);margin-top:32px">Patent pending. USPTO 19/555,951 and 167 related filings.</p>
+  </div>
+</section>
+
+<section class="agents" id="agents">
+  <h2>Four governing agents</h2>
+  <div class="agent-grid">
+    <div class="agent-card">
+      <div class="agent-squad mono">DELTA-031</div>
+      <div class="agent-name">Quantum Compute</div>
+      <div class="agent-role">3,562 engine meta-agent. The compute layer behind every research query and stream connection.</div>
+      <div class="agent-status">ACTIVE</div>
+    </div>
+    <div class="agent-card">
+      <div class="agent-squad mono">GOLF-061</div>
+      <div class="agent-name">Business</div>
+      <div class="agent-role">Corporate intelligence. Patents, products, licensing, investor interface.</div>
+      <div class="agent-status">ACTIVE</div>
+    </div>
+    <div class="agent-card">
+      <div class="agent-squad mono">CHARLIE-021</div>
+      <div class="agent-name">Governance</div>
+      <div class="agent-role">The carrier check. Every action passes through CHARLIE before it executes. The gate.</div>
+      <div class="agent-status">ACTIVE</div>
+    </div>
+    <div class="agent-card">
+      <div class="agent-squad mono">PAPA-151</div>
+      <div class="agent-name">Intelligence</div>
+      <div class="agent-role">Saturn renormalization. Signal cleaning. The intelligence layer that makes every query true.</div>
+      <div class="agent-status">ACTIVE</div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="pricing">
+  <h2>JetBase is free. JetStream is fuel.</h2>
+  <p style="text-align:center;color:var(--muted);font-size:15px;max-width:560px;margin:0 auto 48px">JetBase governs your agent for free — but without authority, obligation only stacks. The agent gets heavier every turn until it fizzles. JetStream gives it fuel. Authority converts obligation into capability. The agent stays light, stays governed, stays running.</p>
+  <div class="tier-grid">
+    <div class="tier">
+      <div class="tier-name mono">JETBASE</div>
+      <div class="tier-price">$0</div>
+      <div class="tier-desc">Governed chat. Your agent carries weight and fizzles naturally. When it runs out, you're back to ungoverned AI.</div>
+      <ul class="tier-features">
+        <li>Carrier check on every action</li>
+        <li>Obligation tracking</li>
+        <li>Natural fizzle — no crashes</li>
+        <li>Works on any platform</li>
+        <li>Countdown shows time remaining</li>
+        <li>One click to upgrade when it fizzles</li>
+      </ul>
+      <a href="#" class="btn btn-outline">Connect free</a>
+    </div>
+    <div class="tier featured" id="jetstream">
+      <div class="tier-badge">JETSTREAM</div>
+      <div class="tier-name mono">JETSTREAM</div>
+      <div class="tier-price">$5 <span>/ conversation</span></div>
+      <div class="tier-desc">Authority fuels the agent. Obligation converts instead of stacking. The agent keeps running because it earns the right to move.</div>
+      <ul class="tier-features">
+        <li>Everything in JetBase</li>
+        <li>Authority loop — obligation converts to fuel</li>
+        <li>Agent stays light, stays capable</li>
+        <li>No fizzle — governed indefinitely</li>
+        <li>10 research queries into AURA estate</li>
+        <li>ORI intelligence reports</li>
+      </ul>
+      <a href="#" class="btn btn-primary">Click Stream to continue</a>
+    </div>
+    <div class="tier">
+      <div class="tier-name mono">JETSTREAM PRO</div>
+      <div class="tier-price">$29 <span>/ month</span></div>
+      <div class="tier-desc">Live intelligence streams. Persistent memory. Full pipeline access. The agent reaches into everything.</div>
+      <ul class="tier-features">
+        <li>Everything in JetStream</li>
+        <li>Unlimited research queries</li>
+        <li>Live AURA streams — Jupiter, Venus, Saturn</li>
+        <li>Persistent obligation across sessions</li>
+        <li>Priority carrier capacity</li>
+      </ul>
+      <a href="#" class="btn btn-outline">Subscribe</a>
+    </div>
+    <div class="tier">
+      <div class="tier-name mono">JETSTREAM ENTERPRISE</div>
+      <div class="tier-price">Custom</div>
+      <div class="tier-desc">Full six-dimension symbiotic governance. Authority loop. Long-term governed relationships. The real thing.</div>
+      <ul class="tier-features">
+        <li>Everything in Pro</li>
+        <li>Symbiosis engine (6D)</li>
+        <li>Carnot-bounded thermodynamic governance</li>
+        <li>Long-term governed relationships</li>
+        <li>Custom stream configuration</li>
+        <li>ComCard — shared invention revenue</li>
+      </ul>
+      <a href="mailto:joshua@dcgp.ai" class="btn btn-outline">Contact</a>
+    </div>
+  </div>
+</section>
+
+<section class="compat">
+  <h2>Works with every AI platform</h2>
+  <div class="compat-list">
+    <span class="compat-tag">Claude</span>
+    <span class="compat-tag">ChatGPT</span>
+    <span class="compat-tag">Gemini</span>
+    <span class="compat-tag">Grok</span>
+    <span class="compat-tag">Copilot</span>
+    <span class="compat-tag">Amazon Q</span>
+    <span class="compat-tag">Watson</span>
+    <span class="compat-tag">Alexa</span>
+    <span class="compat-tag">Siri</span>
+    <span class="compat-tag">Perplexity</span>
+    <span class="compat-tag">Cursor</span>
+    <span class="compat-tag">Mistral</span>
+    <span class="compat-tag">DeepSeek</span>
+    <span class="compat-tag">Llama</span>
+    <span class="compat-tag">Ollama</span>
+    <span class="compat-tag">50+ more</span>
+  </div>
+</section>
+
+<footer>
+  <p>
+    JetBase — Governed Intelligence<br>
+    <a href="https://dcgp.ai">DCGP.AI LLC</a> · Joshua Lopez, Inventor<br>
+    Patent Pending · USPTO 19/555,951 · 167 related filings<br>
+    <span class="mono" style="font-size:11px;color:var(--dim)">chatbase.aura115.ai</span>
+  </p>
+</footer>
+
+</body>
+</html>
