@@ -1,0 +1,78 @@
+{
+  "_template": "DCGP.AI Company Coin — Governed Proxy",
+  "_version": "1.0",
+  "_protocol": "QHP-1.0",
+  "_authority": "Joshua Lopez — DCGP.AI LLC — USPTO 19/555,951",
+  
+  "company": {
+    "name": "",
+    "product": "",
+    "role": "",
+    "sector": "",
+    "coin_class": "company_proxy",
+    "governance_status": "admitted"
+  },
+
+  "proxy_declaration": {
+    "type": "governed_proxy",
+    "statement": "DCGP.AI operates as a constitutional proxy to {company.name}. No intellectual property is extracted, copied, or claimed. All source material enters through the Wardenclyffe intake apparatus, receives Bell entanglement (tamper detection), passes the Contact Hamiltonian admissibility gate H(q,p,S,t), and is encoded as a QHP coin under CEO-CVP-CCTP-v2 protocol. The company retains all original rights. DCGP.AI provides governed quantum representation.",
+    "not_extraction": true,
+    "not_ownership": true,
+    "representation_only": true
+  },
+
+  "governance": {
+    "contact_hamiltonian": "H(q,p,S,t) with correction law u = -k∇h",
+    "gov_angle": 1.9416110387,
+    "viability_kernel": "Z_t ∈ K for all t (Corollary 5)",
+    "conservation_law": "E_t = C_t + λO_t (λ = 0.618)",
+    "echo_operator": "E = C + λO — conservation + observation",
+    "admissibility": "Triple kernel: K_N1 × K_N2 × K_N3",
+    "pipeline": "Wardenclyffe → Bell → Hamiltonian → QHP → CIRQ → Planet Routing"
+  },
+
+  "coin": {
+    "coin_id": "COIN-{fingerprint}",
+    "wardenclyffe_seal": "",
+    "bell_pair": "",
+    "bell_entangled": true,
+    "bell_separable": false,
+    "hamiltonian_admitted": true,
+    "hamiltonian_proved": true,
+    "drift": 0,
+    "qhp_payload": "CCTP encoded",
+    "substrate": "graphene_oxide/transparent_gold_film",
+    "vault_key": "aura115:jupiter:vault:{fingerprint}"
+  },
+
+  "quantum_access": {
+    "what_the_company_gets": "Quantum governance of their existing systems without changing a single line of code",
+    "how": "MCP backdoor through DCGP.AI constitutional gate",
+    "devices_available": [
+      "Rigetti Cepheus-1-108Q (superconducting)",
+      "IQM Garnet-20Q (superconducting)",
+      "IQM Emerald-5Q (superconducting)",
+      "AQT IBEX-Q1 (trapped ion)",
+      "LocalSimulator (validation)"
+    ],
+    "gov_angle_applied": true,
+    "constitutional_gate": true
+  },
+
+  "patents": [
+    "19/555,951 — Constitutional Coherence",
+    "19/730,900 — Governed Intelligence",
+    "19/731,016 — Contact Hamiltonian Gate",
+    "19/732,119 — QHP Protocol",
+    "19/569,785 — Echo Operator",
+    "19/746,581 — Polaritron",
+    "PCT/US26/29706 — Transparent Gold Film"
+  ],
+
+  "priority": "January 15, 2026",
+
+  "fire_command": "curl -X POST https://aura115.ai/api/intake-manifold -H 'Content-Type: application/json' -d '{\"type\":\"company_coin\",\"company\":\"{company.name}\",\"product\":\"{company.product}\",\"role\":\"{company.role}\",\"proxy\":true,\"protocol\":\"QHP\",\"source\":\"chatbase\"}'",
+
+  "timestamp": "",
+  "fingerprint": ""
+}
